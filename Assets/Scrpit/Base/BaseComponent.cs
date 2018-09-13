@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseComponent<M,V,C> : BaseMonoBehaviour
-where M : BaseMVCModel
-where V : BaseMVCView
-where C : BaseMVCController<M,V>
+public class BaseComponent<M, V, C> : BaseMonoBehaviour
+where M : BaseMVCModel,new()
+where V : BaseMVCView, new()
+where C : BaseMVCController<M, V>, new()
 {
     //控制器
-    private M mModel;
+    public M mModel;
     //模型
-    private V mView;
+    public V mView;
     //视图
-    private C mController; 
+    public C mController;
 
     /// <summary>
     /// 初始化
@@ -20,11 +20,16 @@ where C : BaseMVCController<M,V>
     private void Awake()
     {
         //添加相应模型
-        mModel = gameObject.AddComponent<M>();
+        mModel = new M();
+        mModel.setContent(this);
+
         //添加相应视图
-        mView = gameObject.AddComponent<V>();
+        mView = new V();
+        mView.setContent(this);
+
         //添加相应控制器
-        mController = gameObject.AddComponent<C>();
+        mController = new C();
+        mController.setContent(this);
         //设置Controller模型
         mController.setModel(mModel);
         //设置Controller视图

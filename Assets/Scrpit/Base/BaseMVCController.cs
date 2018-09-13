@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-public class BaseMVCController<M,V> : BaseMonoBehaviour
+public  class BaseMVCController<M,V> : BaseMVC
 {
     //模型
-    private M mModel;
+    public M mModel;
     //视图
-    private V mView;
+    public V mView;
 
     /// <summary>
     /// 设置模型
@@ -25,4 +25,6 @@ public class BaseMVCController<M,V> : BaseMonoBehaviour
     {
         this.mView = view;
     }
+
+
 }
