@@ -28,7 +28,7 @@ public class RoleOperationModel : BaseMVCModel {
     }
 
     /// <summary>
-    /// 获取角色跳跃指令
+    /// 获取角色跳跃按键指令
     /// </summary>
     /// <returns></returns>
     public string getJumpAxes()
@@ -36,5 +36,12 @@ public class RoleOperationModel : BaseMVCModel {
         return "Role_Jump";
     }
 
+    /// <summary>
+    /// 获取角色交互交互指令
+    /// </summary>
+    /// <returns></returns>
+    public string getInteractAxes() {
+        return "Role_Interact";
+    }
 
 }

@@ -14,8 +14,10 @@ public class CreatureMovementView : BaseMVCView
     /// <summary>
     /// 创建物移动
     /// </summary>
-    /// <param name="direction"></param>
-    public void creatureMove(Vector3 direction, long moveSpeed)
+    /// <param name="direction">移动方向</param>
+    /// <param name="moveSpeed">移动速度</param>
+    /// <param name="rotationRate">转身速率</param>
+    public void creatureMove(Vector3 direction, long moveSpeed,float rotationRate)
     {
         if (mCreatureRB == null)
         {
@@ -23,7 +25,14 @@ public class CreatureMovementView : BaseMVCView
             return;
         }
         //LogUtil.Log("开始移动 directionX："+ direction.x+ " directionY：" + direction.y + " directionZ：" + direction.z);
+        //开始移动
         mCreatureRB.MovePosition(getContent().transform.position + direction * moveSpeed * Time.deltaTime);
+
+        //转身 正面朝前
+        Quaternion creatureRotation = Quaternion.Lerp(getContent().transform.rotation, Quaternion.Euler(
+            0f, (direction.x > 0f ? 1f : -1f) * Vector2.Angle(Vector2.up, new Vector2(direction.x,direction.z)) + 180f, 0f
+        ), rotationRate);
+        getContent().transform.rotation = creatureRotation;
     }
 
     /// <summary>

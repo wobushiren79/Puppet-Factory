@@ -60,6 +60,15 @@ public class RoleOperationView : BaseMVCView
         }
         mMovementCpt.creatureJump();
     }
+    
+    /// <summary>
+    /// 交互操作
+    /// </summary>
+    public void interact()
+    {
+
+    }
+
 
     /// <summary>
     /// 基础移动

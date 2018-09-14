@@ -17,8 +17,10 @@ public class CreatureMovementController : BaseMVCController<CreatureMovementMode
     {
         //调取model获取移动速度数据
         long moveSpeed = mModel.getCreatureMoveSpeed();
+        //调取model获取转身速率
+        float rotationRate = mModel.getCreatureRotationRate();
         //调取view移动物体
-        mView.creatureMove(direction, moveSpeed);
+        mView.creatureMove(direction, moveSpeed, rotationRate);
     }
 
     /// <summary>

@@ -27,6 +27,15 @@ public class CreatureMovementModel : BaseMVCModel
     }
 
     /// <summary>
+    /// 获取物体转身速率
+    /// </summary>
+    /// <returns></returns>
+    public float getCreatureRotationRate()
+    {
+        return mAttributeBiz.getCreatureRotationRate(null);
+    }
+
+    /// <summary>
     /// 获取物体的跳跃力度
     /// </summary>
     /// <returns></returns>
@@ -34,6 +43,4 @@ public class CreatureMovementModel : BaseMVCModel
     {
         return mAttributeBiz.getCreatureJumpEfforts(null);
     }
-
-
 }

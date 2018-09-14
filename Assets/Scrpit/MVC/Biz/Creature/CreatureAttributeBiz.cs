@@ -15,6 +15,17 @@ public class CreatureAttributeBiz
         return moveSpeed;
     }
 
+    /// <summary>
+    /// 根据属性获取物体转身速率
+    /// </summary>
+    /// <param name="data"></param>
+    /// <returns></returns>
+    public float getCreatureRotationRate(CreatureBean data)
+    {
+        float rotationRate = 0.1f;
+        return rotationRate;
+    }
+
    /// <summary>
    /// 根据属性获取物体跳跃力度
    /// </summary>

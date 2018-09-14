@@ -55,7 +55,11 @@ public class RoleOperationController : BaseMVCController<RoleOperationModel, Rol
     /// </summary>
     public void roleInteract()
     {
-
+        if (Input.GetButtonDown(mModel.getInteractAxes()))
+        {
+            LogUtil.Log("交互按钮点击");
+            mView.interact();
+        }
     }
 
 
