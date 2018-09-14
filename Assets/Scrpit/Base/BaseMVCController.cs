@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-public  class BaseMVCController<M,V> : BaseMVC
+public abstract  class BaseMVCController<M,V> : BaseMVC
 {
     //模型
     public M mModel;

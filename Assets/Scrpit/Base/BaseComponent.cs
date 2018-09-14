@@ -15,14 +15,13 @@ where C : BaseMVCController<M, V>, new()
     public C mController;
 
     /// <summary>
-    /// 初始化
+    /// 构造函数初始化
     /// </summary>
-    private void Awake()
+    public BaseComponent()
     {
         //添加相应模型
         mModel = new M();
         mModel.setContent(this);
-
         //添加相应视图
         mView = new V();
         mView.setContent(this);
@@ -34,5 +33,15 @@ where C : BaseMVCController<M, V>, new()
         mController.setModel(mModel);
         //设置Controller视图
         mController.setView(mView);
+    }
+
+    /// <summary>
+    /// 初始化数据
+    /// </summary>
+    public void Awake()
+    {
+        mModel.initData();
+        mView.initData();
+        mController.initData();
     }
 }

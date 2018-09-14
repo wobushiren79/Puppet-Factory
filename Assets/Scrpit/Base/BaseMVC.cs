@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-public class BaseMVC 
+public abstract class BaseMVC 
 {
     //上下文对象
     public BaseMonoBehaviour mContent;
+
+    /// <summary>
+    /// 初始化数据
+    /// </summary>
+    public abstract void initData();
 
     /// <summary>
     /// 设置上下文对象

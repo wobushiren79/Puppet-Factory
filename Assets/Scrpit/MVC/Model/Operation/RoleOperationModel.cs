@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class RoleOperationModel : BaseMVCModel {
 
+    public override void initData()
+    {
+ 
+    }
+
     /// <summary>
     /// 获取左右移动按键指令
     /// </summary>
@@ -30,5 +35,6 @@ public class RoleOperationModel : BaseMVCModel {
     {
         return "Role_Jump";
     }
+
 
 }

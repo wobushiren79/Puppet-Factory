@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-public class BaseMVCModel : BaseMVC
+public abstract class BaseMVCModel : BaseMVC
 {
 
 }

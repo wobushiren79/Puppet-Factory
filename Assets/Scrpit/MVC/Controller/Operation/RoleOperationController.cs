@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class RoleOperationController : BaseMVCController<RoleOperationModel, RoleOperationView>
 {
+    public override void initData()
+    {
+   
+    }
 
     /// <summary>
     /// 角色移动操作
@@ -12,10 +16,10 @@ public class RoleOperationController : BaseMVCController<RoleOperationModel, Rol
     {
         if (Input.GetButton(mModel.getMoveHorizontalAxes()))
         {
-            LogUtil.Log("左右移动按钮持续点击");
+            //LogUtil.Log("左右移动按钮持续点击");
             //获取变化值
             float moveAxis = Input.GetAxis(mModel.getMoveHorizontalAxes());
-            LogUtil.Log("左右移动变化值：" + moveAxis);
+            //LogUtil.Log("左右移动变化值：" + moveAxis);
             if (moveAxis > 0)
                 mView.moveRight(moveAxis);//右移动 
             else if (moveAxis < 0)
@@ -23,14 +27,14 @@ public class RoleOperationController : BaseMVCController<RoleOperationModel, Rol
         }
         if (Input.GetButton(mModel.getMoveVerticalAxes()))
         {
-            LogUtil.Log("上下按钮持续点击");
+            //LogUtil.Log("上下按钮持续点击");
             //获取变化值
             float moveAxis = Input.GetAxis(mModel.getMoveVerticalAxes());
-            LogUtil.Log("上下移动变化值：" + moveAxis);
+            //LogUtil.Log("上下移动变化值：" + moveAxis);
             if (moveAxis > 0)
-                mView.moveUp(moveAxis);//上移动 
+                mView.moveForward(moveAxis);//前移动 
             else if (moveAxis < 0)
-                mView.moveDown(moveAxis);//下移动 
+                mView.moveBackward(moveAxis);//后移动 
         }
     }
 
@@ -41,7 +45,7 @@ public class RoleOperationController : BaseMVCController<RoleOperationModel, Rol
     {
         if (Input.GetButtonDown(mModel.getJumpAxes()))
         {
-            LogUtil.Log("跳跃按钮点击");
+            //LogUtil.Log("跳跃按钮点击");
             mView.jump();//跳跃
         }
     }
@@ -53,7 +57,6 @@ public class RoleOperationController : BaseMVCController<RoleOperationModel, Rol
     {
 
     }
-
 
 
 }
