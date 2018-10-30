@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-public class CreatureMovementCpt : BaseComponent<CreatureMovementModel, CreatureMovementView, CreatureMovementController>
+public class CreatureMovementCpt : BaseComponent
 {
     public Vector3 mMoveDirection;
 
-    private new void Awake()
+    private CreatureMovementController mCreatureMovementController;
+    private  void Awake()
     {
-        base.Awake();
+        mCreatureMovementController = new CreatureMovementController(this);
         mMoveDirection = Vector3.zero;
     }
 
@@ -15,7 +16,7 @@ public class CreatureMovementCpt : BaseComponent<CreatureMovementModel, Creature
     {
         if (mMoveDirection != null && mMoveDirection != Vector3.zero)
         {
-            mController.creatureMove(mMoveDirection);
+            mCreatureMovementController.CreatureMove(mMoveDirection);
             mMoveDirection = Vector3.zero;
         }
     }
@@ -23,7 +24,7 @@ public class CreatureMovementCpt : BaseComponent<CreatureMovementModel, Creature
     /// <summary>
     /// 左移
     /// </summary>
-    public void creatureMoveLeft()
+    public void CreatureMoveLeft()
     {
         mMoveDirection.x -= 1f;
     }
@@ -31,7 +32,7 @@ public class CreatureMovementCpt : BaseComponent<CreatureMovementModel, Creature
     /// <summary>
     /// 右移
     /// </summary>
-    public void creatureMoveRight()
+    public void CreatureMoveRight()
     {
         mMoveDirection.x += 1f;
     }
@@ -39,7 +40,7 @@ public class CreatureMovementCpt : BaseComponent<CreatureMovementModel, Creature
     /// <summary>
     /// 前移
     /// </summary>
-    public void creatureMoveForward()
+    public void CreatureMoveForward()
     {
         mMoveDirection.z += 1f;
     }
@@ -47,7 +48,7 @@ public class CreatureMovementCpt : BaseComponent<CreatureMovementModel, Creature
     /// <summary>
     /// 后移
     /// </summary>
-    public void creatureMoveBackward()
+    public void CreatureMoveBackward()
     {
         mMoveDirection.z -= 1f;
     }
@@ -55,9 +56,9 @@ public class CreatureMovementCpt : BaseComponent<CreatureMovementModel, Creature
     /// <summary>
     /// 跳跃
     /// </summary>
-    public void creatureJump()
+    public void CreatureJump()
     {
-        mController.creatureJump();
+        mCreatureMovementController.CreatureJump();
     }
 
 }

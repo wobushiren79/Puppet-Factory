@@ -7,23 +7,23 @@ public abstract class BaseMVCService<T>
     /// 增加数据
     /// </summary>
     /// <param name="data"></param>
-    public abstract T add(T data);
+    public abstract T Add(T data);
 
     /// <summary>
     /// 删除数据
     /// </summary>
     /// <param name="data"></param>
-    public abstract T delete(T data);
+    public abstract T Delete(T data);
 
     /// <summary>
     /// 更新数据
     /// </summary>
     /// <param name="data"></param>
-    public abstract T update(T data);
+    public abstract T Update(T data);
 
     /// <summary>
     /// 查询数据
     /// </summary>
     /// <param name="data"></param>
-    public abstract T query(T data);
+    public abstract T Query(T data);
 }

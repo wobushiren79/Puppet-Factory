@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class RoleOperationModel : BaseMVCModel {
 
-    public override void initData()
+    public override void InitData()
     {
- 
+    
     }
 
     /// <summary>
     /// 获取左右移动按键指令
     /// </summary>
     /// <returns></returns>
-    public string getMoveHorizontalAxes()
+    public string GetMoveHorizontalAxes()
     {
         return "Move_Horizontal";
     }
@@ -22,7 +22,7 @@ public class RoleOperationModel : BaseMVCModel {
     /// 获取上下移动按键指令
     /// </summary>
     /// <returns></returns>
-    public string getMoveVerticalAxes()
+    public string GetMoveVerticalAxes()
     {
         return "Move_Vertical";
     }
@@ -31,7 +31,7 @@ public class RoleOperationModel : BaseMVCModel {
     /// 获取角色跳跃按键指令
     /// </summary>
     /// <returns></returns>
-    public string getJumpAxes()
+    public string GetJumpAxes()
     {
         return "Role_Jump";
     }
@@ -40,8 +40,9 @@ public class RoleOperationModel : BaseMVCModel {
     /// 获取角色交互交互指令
     /// </summary>
     /// <returns></returns>
-    public string getInteractAxes() {
+    public string GetInteractAxes() {
         return "Role_Interact";
     }
+
 
 }

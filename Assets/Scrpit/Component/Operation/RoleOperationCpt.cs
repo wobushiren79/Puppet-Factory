@@ -2,8 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoleOperationCpt : BaseComponent<RoleOperationModel, RoleOperationView, RoleOperationController>
+public class RoleOperationCpt : BaseComponent
 {
+    private RoleOperationController mRoleOperationController;
+
+    private void Awake()
+    {
+        mRoleOperationController = new RoleOperationController(this);
+    }
 
     /// <summary>
     /// 检测输入
@@ -11,10 +17,10 @@ public class RoleOperationCpt : BaseComponent<RoleOperationModel, RoleOperationV
     private void Update()
     {
         //角色移动监控
-        mController.roleMove();
+        mRoleOperationController.RoleMove();
         //角色跳跃监控
-        mController.roleJump();
+        mRoleOperationController.RoleJump();
         //角色交互监控
-        mController.roleInteract();
+        mRoleOperationController.RoleInteract();
     }
 }

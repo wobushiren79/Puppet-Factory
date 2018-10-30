@@ -11,7 +11,7 @@ public class CreatureMovementModel : BaseMVCModel
     /// <summary>
     /// 初始化数据
     /// </summary>
-    public override void initData()
+    public override void InitData()
     {
         mAttributeBiz = new CreatureAttributeBiz();
         mAttributeService = new CreatureAttributeService();
@@ -21,7 +21,7 @@ public class CreatureMovementModel : BaseMVCModel
     /// 获取物体移动速度
     /// </summary>
     /// <returns></returns>
-    public long getCreatureMoveSpeed()
+    public long GetCreatureMoveSpeed()
     {
       return mAttributeBiz.getCreatureMoveSpeed(null);
     }
@@ -30,7 +30,7 @@ public class CreatureMovementModel : BaseMVCModel
     /// 获取物体转身速率
     /// </summary>
     /// <returns></returns>
-    public float getCreatureRotationRate()
+    public float GetCreatureRotationRate()
     {
         return mAttributeBiz.getCreatureRotationRate(null);
     }
@@ -39,8 +39,9 @@ public class CreatureMovementModel : BaseMVCModel
     /// 获取物体的跳跃力度
     /// </summary>
     /// <returns></returns>
-    public long getCreatureJumpEfforts()
+    public long GetCreatureJumpEfforts()
     {
         return mAttributeBiz.getCreatureJumpEfforts(null);
     }
+
 }

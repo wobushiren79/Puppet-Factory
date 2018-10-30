@@ -4,61 +4,65 @@ using UnityEngine;
 
 public class RoleOperationController : BaseMVCController<RoleOperationModel, RoleOperationView>
 {
-    public override void initData()
+    public RoleOperationController(BaseMonoBehaviour content) : base(content)
     {
-   
+
     }
 
+    public override void InitData()
+    {
+
+    }
     /// <summary>
     /// 角色移动操作
     /// </summary>
-    public void roleMove()
+    public void RoleMove()
     {
-        if (Input.GetButton(mModel.getMoveHorizontalAxes()))
+        if (Input.GetButton(GetModel().GetMoveHorizontalAxes()))
         {
             //LogUtil.Log("左右移动按钮持续点击");
             //获取变化值
-            float moveAxis = Input.GetAxis(mModel.getMoveHorizontalAxes());
+            float moveAxis = Input.GetAxis(GetModel().GetMoveHorizontalAxes());
             //LogUtil.Log("左右移动变化值：" + moveAxis);
             if (moveAxis > 0)
-                mView.moveRight(moveAxis);//右移动 
+                GetView().MoveRight(moveAxis);//右移动 
             else if (moveAxis < 0)
-                mView.moveLeft(moveAxis);//左移动 
+                GetView().MoveLeft(moveAxis);//左移动 
         }
-        if (Input.GetButton(mModel.getMoveVerticalAxes()))
+        if (Input.GetButton(GetModel().GetMoveVerticalAxes()))
         {
             //LogUtil.Log("上下按钮持续点击");
             //获取变化值
-            float moveAxis = Input.GetAxis(mModel.getMoveVerticalAxes());
+            float moveAxis = Input.GetAxis(GetModel().GetMoveVerticalAxes());
             //LogUtil.Log("上下移动变化值：" + moveAxis);
             if (moveAxis > 0)
-                mView.moveForward(moveAxis);//前移动 
+                GetView().MoveForward(moveAxis);//前移动 
             else if (moveAxis < 0)
-                mView.moveBackward(moveAxis);//后移动 
+                GetView().MoveBackward(moveAxis);//后移动 
         }
     }
 
     /// <summary>
     /// 角色跳跃操作
     /// </summary>
-    public void roleJump()
+    public void RoleJump()
     {
-        if (Input.GetButtonDown(mModel.getJumpAxes()))
+        if (Input.GetButtonDown(GetModel().GetJumpAxes()))
         {
             //LogUtil.Log("跳跃按钮点击");
-            mView.jump();//跳跃
+            GetView().Jump();//跳跃
         }
     }
 
     /// <summary>
     /// 角色互动操作
     /// </summary>
-    public void roleInteract()
+    public void RoleInteract()
     {
-        if (Input.GetButtonDown(mModel.getInteractAxes()))
+        if (Input.GetButtonDown(GetModel().GetInteractAxes()))
         {
             LogUtil.Log("交互按钮点击");
-            mView.interact();
+            GetView().Interact();
         }
     }
 

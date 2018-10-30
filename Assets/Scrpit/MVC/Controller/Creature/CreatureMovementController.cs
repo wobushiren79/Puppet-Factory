@@ -3,35 +3,38 @@ using UnityEditor;
 
 public class CreatureMovementController : BaseMVCController<CreatureMovementModel, CreatureMovementView>
 {
-
-    public override void initData()
+    public CreatureMovementController(BaseMonoBehaviour content) : base(content)
     {
-       
+    }
+
+    public override void InitData()
+    {
+
     }
 
     /// <summary>
     /// 角色移动
     /// </summary>
     /// <param name="direction">方向</param>
-    public void creatureMove(Vector3 direction)
+    public void CreatureMove(Vector3 direction)
     {
         //调取model获取移动速度数据
-        long moveSpeed = mModel.getCreatureMoveSpeed();
+        long moveSpeed = GetModel().GetCreatureMoveSpeed();
         //调取model获取转身速率
-        float rotationRate = mModel.getCreatureRotationRate();
+        float rotationRate = GetModel().GetCreatureRotationRate();
         //调取view移动物体
-        mView.creatureMove(direction, moveSpeed, rotationRate);
+        GetView().CreatureMove(direction, moveSpeed, rotationRate);
     }
 
     /// <summary>
     /// 角色跳跃
     /// </summary>
-    public void creatureJump()
+    public void CreatureJump()
     {
         //调取model获取跳跃力度数据
-        long jumpEfforts = mModel.getCreatureJumpEfforts();
+        long jumpEfforts = GetModel().GetCreatureJumpEfforts();
         //调取view跳跃物体
-        mView.creatureJump(jumpEfforts);
+        GetView().CreatureJump(jumpEfforts);
     }
 
 

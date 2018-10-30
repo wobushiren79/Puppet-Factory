@@ -7,64 +7,64 @@ public class RoleOperationView : BaseMVCView
     //移动组件
     CreatureMovementCpt mMovementCpt;
 
-    public override void initData()
+    public override void InitData()
     {
-        mMovementCpt = getContent().GetComponent<CreatureMovementCpt>();
+        mMovementCpt = GetContent().GetComponent<CreatureMovementCpt>();
     }
 
     /// <summary>
     /// 向左移动操作
     /// </summary>
     /// <param name="moveAxis"></param>
-    public void moveLeft(float moveAxis)
+    public void MoveLeft(float moveAxis)
     {
-        baseMove(DirectionEnum.left);
+        BaseMove(DirectionEnum.Left);
     }
 
     /// <summary>
     /// 向右移动操作
     /// </summary>
     /// <param name="moveAxis"></param>
-    public void moveRight(float moveAxis)
+    public void MoveRight(float moveAxis)
     {
-        baseMove(DirectionEnum.right);
+        BaseMove(DirectionEnum.Right);
     }
 
     /// <summary>
     /// 向上移动操作
     /// </summary>
     /// <param name="moveAxis"></param>
-    public void moveForward(float moveAxis)
+    public void MoveForward(float moveAxis)
     {
-        baseMove(DirectionEnum.forward);
+        BaseMove(DirectionEnum.Forward);
     }
 
     /// <summary>
     /// 向下移动操作
     /// </summary>
     /// <param name="moveAxis"></param>
-    public void moveBackward(float moveAxis)
+    public void MoveBackward(float moveAxis)
     {
-        baseMove(DirectionEnum.backward);
+        BaseMove(DirectionEnum.Backward);
     }
 
     /// <summary>
     /// 跳跃操作
     /// </summary>
-    public void jump()
+    public void Jump()
     {
         if (!mMovementCpt)
         {
             LogUtil.Log("操作无效：对象没有CreatureMovement组件");
             return;
         }
-        mMovementCpt.creatureJump();
+        mMovementCpt.CreatureJump();
     }
     
     /// <summary>
     /// 交互操作
     /// </summary>
-    public void interact()
+    public void Interact()
     {
 
     }
@@ -73,7 +73,7 @@ public class RoleOperationView : BaseMVCView
     /// <summary>
     /// 基础移动
     /// </summary>
-    private void baseMove(DirectionEnum direction)
+    private void BaseMove(DirectionEnum direction)
     {
         if (!mMovementCpt)
         {
@@ -81,17 +81,17 @@ public class RoleOperationView : BaseMVCView
             return;
         }
         switch (direction) {
-            case DirectionEnum.left:
-                mMovementCpt.creatureMoveLeft();
+            case DirectionEnum.Left:
+                mMovementCpt.CreatureMoveLeft();
                 break;
-            case DirectionEnum.right:
-                mMovementCpt.creatureMoveRight();
+            case DirectionEnum.Right:
+                mMovementCpt.CreatureMoveRight();
                 break;
-            case DirectionEnum.forward:
-                mMovementCpt.creatureMoveForward();
+            case DirectionEnum.Forward:
+                mMovementCpt.CreatureMoveForward();
                 break;
-            case DirectionEnum.backward:
-                mMovementCpt.creatureMoveBackward();
+            case DirectionEnum.Backward:
+                mMovementCpt.CreatureMoveBackward();
                 break;
         }
     }

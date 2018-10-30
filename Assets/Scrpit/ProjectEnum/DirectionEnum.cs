@@ -3,10 +3,10 @@ using UnityEditor;
 
 public enum DirectionEnum
 {
-    left,//左
-    up,//上
-    right,//右
-    down,//下
-    forward,//前
-    backward//后
+    Left,//左
+    Up,//上
+    Right,//右
+    Down,//下
+    Forward,//前
+    Backward//后
 }

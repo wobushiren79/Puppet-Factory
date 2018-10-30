@@ -3,6 +3,13 @@ using UnityEditor;
 
 public class LogUtil 
 {
+    public enum LogEnum
+    {
+        Normal,//普通日志
+        Error,//错误日志
+        Warning//警告日志
+    }
+
     /// <summary>
     /// 普通打印日志
     /// </summary>
@@ -20,6 +27,7 @@ public class LogUtil
     {
         return BaseDebugLog("日志输出-警告||", msg, LogEnum.Warning);
     }
+
     /// <summary>
     /// 打印错误日志
     /// </summary>
@@ -39,7 +47,7 @@ public class LogUtil
     private static string  BaseDebugLog(string title,string content,LogEnum type)
     {
         //如果没有开启日志输出 则放弃打印
-        if (!ProjectConfigInfo.Is_Open_Log_Msg)
+        if (!ProjectConfigInfo.IS_OPEN_LOG_MSG)
             return null;
         string logMsg = title + content;
         //根据不同的日志类型答应不同的日志

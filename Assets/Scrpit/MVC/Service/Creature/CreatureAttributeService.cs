@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class CreatureAttributeService : BaseMVCService<CreatureBean>
 {
-    public override CreatureBean add(CreatureBean data)
+    public override CreatureBean Add(CreatureBean data)
     {
         throw new System.NotImplementedException();
     }
 
-    public override CreatureBean delete(CreatureBean data)
+    public override CreatureBean Delete(CreatureBean data)
     {
         throw new System.NotImplementedException();
     }
 
-    public override CreatureBean query(CreatureBean data)
+    public override CreatureBean Query(CreatureBean data)
     {
         throw new System.NotImplementedException();
     }
 
-    public override CreatureBean update(CreatureBean data)
+    public override CreatureBean Update(CreatureBean data)
     {
         throw new System.NotImplementedException();
     }
